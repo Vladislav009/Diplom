@@ -89,8 +89,8 @@ class CategoriesController extends Controller
         return redirect()->route('categories.index');
     }
 
-    public function questionCount(Category $category)
-    {
-        $categories = Category::withCount('questions')->get(); 
-    }
+    // public function questionCount(Category $category)
+    // {
+    //     $categories = Category::withCount('questions')->get(); 
+    // }
 }

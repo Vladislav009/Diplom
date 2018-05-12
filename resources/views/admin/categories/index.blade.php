@@ -21,9 +21,7 @@
 										<td>{{ $category->title }}</td>	
 											
 											<td>
-												@foreach($categories as $category)
-													{{$category->questions_count}}
-												@endforeach
+													{{$category->questions->count()}}
 											</td>
 											
 												

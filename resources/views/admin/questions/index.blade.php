@@ -3,7 +3,7 @@
 @section('content')
 	<div class="container">
 		<div class="row">
-			<div class="col-md-9 col-md-offset-2">
+			<div class="col-md-10 col-md-offset-2">
 				<div class="panel panel-default">
 					<div class="panel-heading">Questions</div>
 					<div class="panel-body">
@@ -13,6 +13,7 @@
 									<th>ID</th>
 									<th>Category</th>
 									<th>Title</th>
+									<th>Date</th>
 									<th>Status</th>
 									<th>Actions</th>
 								</tr>
@@ -21,6 +22,7 @@
 										<td>{{ $post->id }}</td>
 										<td>{{ $post->category->title}}</td>
 										<td>{{ $post->title }}</td>
+										<td>{{ $post->created_at }}</td>
 										<td>
 											@if(!empty($post->body))
 											Опубликован
