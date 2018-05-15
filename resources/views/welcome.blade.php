@@ -1,92 +1,107 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>FAQ</title>
+    <title>FAQ</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+    <!-- Styles -->
+    <style>
+    html, body {
+        background-color: #fff;
+        color: #636b6f;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 100;
+        height: 100vh;
+        margin: 0;
+    }
 
-            .full-height {
-                height: 100vh;
-            }
+    .full-height {
+        height: 100vh;
+    }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+    .flex-center {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
 
-            .position-ref {
-                position: relative;
-            }
+    .position-ref {
+        position: relative;
+    }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+    .top-right {
+        position: absolute;
+        right: 10px;
+        top: 18px;
+    }
 
-            .content {
-                text-align: center;
-            }
+    .content {
+        text-align: center;
+    }
 
-            .title {
-                font-size: 84px;
-            }
+    .title {
+        font-size: 84px;
+    }
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+    .links > a {
+        color: #636b6f;
+        padding: 0 25px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: .1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <!-- <a href="{{ route('register') }}">Register</a> -->
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-               
-            </div>
+    .m-b-md {
+        margin-bottom: 30px;
+    }
+</style>
+</head>
+<body>
+    <div class="flex-center position-ref full-height">
+        @if (Route::has('login'))
+        <div class="top-right links">
+            @auth
+            <a href="{{ url('/home') }}">Home</a>
+            @else
+            <a href="{{ route('login') }}">Login</a>
+            <a href="{{ route('register') }}">Register</a>
+            @endauth
         </div>
+        @endif
 
-        <script src="{{ asset('js/app.js') }}"></script>
-    </body>
+        <div class="container">
+         <div class="panel-body">
+            <form action="@if(empty($entity)){{ route('questions.store') }}@else{{ route('questions.update', $entity->id) }}@endif" method="post">
+
+             {{ csrf_field() }}
+             @isset($entity)
+             {{ method_field('PUT') }}
+             @endisset
+             <div class="row">
+                 @include('admin.fields.text', ['field' => 'title', 'name' => 'Title'])
+
+                 @include('admin.fields.textarea', ['field' => 'body', 'name' => 'Body', 'rows' => 10])
+                 @include('admin.fields.select', ['field' => 'category_id', 'name' => 'Category', 'options' => $categories])
+             </div>
+             <input class="btn btn-primary btn-lg" type="submit" value="save"> 
+
+         </form>
+     </div>
+
+
+
+ </div>
+
+ <script src="{{ asset('js/app.js') }}"></script>
+</body>
 </html>

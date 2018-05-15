@@ -18,7 +18,6 @@
 							@endisset
 							<div class="row">
 								@include('admin.fields.text', ['field' => 'title', 'name' => 'Title'])
-								@include('admin.fields.text', ['field' => 'slug', 'name' => 'Slug'])
 							</div>
 							<input class="btn btn-primary btn-lg" type="submit" value="save">
 						</form>

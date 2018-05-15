@@ -18,7 +18,7 @@
 							@endisset
 							<div class="row">
 								@include('admin.fields.text', ['field' => 'title', 'name' => 'Title'])
-								@include('admin.fields.text', ['field' => 'slug', 'name' => 'Slug'])
+								
 								@include('admin.fields.textarea', ['field' => 'body', 'name' => 'Body', 'rows' => 10])
 								@include('admin.fields.select', ['field' => 'category_id', 'name' => 'Category', 'options' => $categories])
 							</div>
