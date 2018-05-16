@@ -1,3 +1,9 @@
+
+p {
+	color: black;
+}
+
+
 .row {
 	-webkit-flex-direction: column;
 	-moz-flex-direction: column;
