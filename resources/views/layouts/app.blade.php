@@ -34,6 +34,8 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                @if (Route::has('login'))
+                @auth
                     <ul class="navbar-nav mr-auto">
                         <li class="dropdown">
                             <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Questions<b class="caret"></b></a>
@@ -56,8 +58,11 @@
                                 <li><a href="{{ route('users.create') }}">Create</a></li>
                             </ul>
                         </li>
-
                     </ul>
+                    @else
+                    <p class="top-line">Авторизуйтесь, чтобы видеть панель управления.</p>
+                    @endauth
+                @endif
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
