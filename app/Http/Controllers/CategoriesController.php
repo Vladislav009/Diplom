@@ -85,6 +85,7 @@ class CategoriesController extends Controller
      */
     public function destroy(Category $category)
     {
+        $category->questions()->delete();
         $category->delete();
         return redirect()->route('categories.index');
     }
