@@ -44,7 +44,7 @@
            <div id="{{$category->id}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
              <div class="card-body">
               
-                  {{$category->questions()->get()}}
+                  {{$category->questions->get('title')}}
              </div>
            </div>
          </div>
