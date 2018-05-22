@@ -12,7 +12,8 @@ class PageControl extends Controller
     public function index()
     {
     	$categories = Category::all();
-    	return view('welcome', compact('categories'));
+    	$questions = Question::all();
+    	return view('welcome', compact('categories','questions'));
     }
 
 

@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'PageControl@index');
+Route::get('/welcome', 'QuestionsController@store');
 
 Auth::routes();
 
