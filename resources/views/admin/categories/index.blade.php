@@ -11,7 +11,7 @@
 					<table class="table">
 						<tr>
 							<th>ID</th>
-							<th>Вопрос</th>
+							<th>Категория</th>
 							<th>Всего/опубл./без отв.</th>
 							<th>Действия</th>
 						</tr>
