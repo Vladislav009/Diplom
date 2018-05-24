@@ -18,3 +18,7 @@ class PageControl extends Controller
 
 
 }
+
+
+
+ // {{$question->title}}

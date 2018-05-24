@@ -9,6 +9,7 @@ class Question extends Model
     protected $fillable = [
     	'slug',
     	'title',
+        'name',
     	'body',
     	'category_id'
     ];

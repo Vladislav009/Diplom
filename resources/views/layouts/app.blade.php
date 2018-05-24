@@ -38,24 +38,24 @@
                 @auth
                     <ul class="navbar-nav mr-auto">
                         <li class="dropdown">
-                            <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Questions<b class="caret"></b></a>
+                            <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Вопросы<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="{{ route('questions.index') }}">All</a></li>
-                                <li><a href="{{ route('questions.create') }}">Create</a></li>
+                                <li><a href="{{ route('questions.index') }}">Все</a></li>
+                                <li><a href="{{ route('questions.create') }}">Создать</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
+                            <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Категории<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="{{ route('categories.index') }}">All</a></li>
-                                <li><a href="{{ route('categories.create') }}">Create</a></li>
+                                <li><a href="{{ route('categories.index') }}">Все</a></li>
+                                <li><a href="{{ route('categories.create') }}">Создать</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Users<b class="caret"></b></a>
+                            <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Пользователи<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="{{ route('users.index') }}">All</a></li>
-                                <li><a href="{{ route('users.create') }}">Create</a></li>
+                                <li><a href="{{ route('users.index') }}">Все</a></li>
+                                <li><a href="{{ route('users.create') }}">Создать</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -68,8 +68,8 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                            <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                            <li><a class="nav-link" href="{{ route('login') }}">{{ __('Войти') }}</a></li>
+                            <li><a class="nav-link" href="{{ route('register') }}">{{ __('Регистрация') }}</a></li>
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -80,7 +80,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Выйти') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
