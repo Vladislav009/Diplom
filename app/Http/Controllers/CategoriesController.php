@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Question;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
@@ -17,6 +18,14 @@ class CategoriesController extends Controller
         $categories = Category::all();
         return view('admin.categories.index',compact('categories'));
     }
+
+    // public function published($status)
+    // {
+    //     $questions = Question::where('status',$status)
+    //                             ->get();
+    //     return view('admin.categories.index', compact('questions'));
+        
+    // }
 
     /**
      * Show the form for creating a new resource.

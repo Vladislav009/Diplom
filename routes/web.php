@@ -10,16 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', 'PageControl@index');
-Route::get('/welcome', 'QuestionsController@store');
+
+Route::resource('pages', 'PageControl');
+
+
+
 
 Auth::routes();
 
 Route::group(['middleware'=>'auth'], function() {
 	Route::get('/home', 'HomeController@index')->name('home');
-	Route::resource('questions','QuestionsController');
-	Route::resource('categories','CategoriesController');
-	Route::resource('users','UsersController');
+	Route::resource('questions','QuestionsController')->except(
+    'show');
+	Route::resource('categories','CategoriesController')->except(
+    'show');
+	Route::resource('users','UsersController')->except(
+    'show');
 });
-

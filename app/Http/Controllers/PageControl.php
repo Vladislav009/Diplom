@@ -16,9 +16,15 @@ class PageControl extends Controller
     	return view('welcome', compact('categories','questions'));
     }
 
+    public function create()
+    {
+        $categories = Category::all();
+        return view('user.form', compact('categories'));
+    }
 
+    public function store(Request $request)
+    {
+        Question::create($request->all());
+        return redirect()->route('pages.index');
+    }
 }
-
-
-
- // {{$question->title}}

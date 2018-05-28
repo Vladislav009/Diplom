@@ -19,7 +19,13 @@
 						<tr>
 							<td>{{ $category->id }}</td>
 							<td>{{ $category->title }}</td>	
-							<td>{{$category->questions->count()}}</td>
+							<td>
+								{{$category->questions->count()}}
+								
+
+								
+								
+							</td>
 							<td>
 								<form action="{{ route('categories.destroy', $category->id) }}" method="POST">
 									<a type="button" class="btn btn-default" href="{{ route('categories.edit', $category->id) }}">Изменить</a>
