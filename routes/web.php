@@ -11,6 +11,8 @@
 |
 */
 Route::get('/', 'PageControl@index');
+Route::get('/sort', 'QuestionsLogic@sort')->name('sort');
+
 
 Route::resource('pages', 'PageControl');
 

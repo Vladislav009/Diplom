@@ -19,6 +19,7 @@ class CreateQuestionsTable extends Migration
             $table->string('name');
             $table->text('body')->nullable();
             $table->string('status')->default('Без ответа');
+            $table->boolean('isPublished')->nullable();
             $table->integer('category_id')->nullable();
             $table->timestamps();
         });

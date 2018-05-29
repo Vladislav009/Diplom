@@ -10,7 +10,6 @@
 					@if($questions->count() > 0)
 					<table class="table">
 						<tr>
-							<th>ID</th>
 							<th>Категория</th>
 							<th>Вопрос</th>
 							<th>Имя</th>
@@ -22,15 +21,15 @@
 									</button>
 									<div class="dropdown-menu">
 										<a class="dropdown-item" href="#">Опубликованы</a>
-										<a class="dropdown-item" href="#">Ожидают ответа</a>
+										<a class="dropdown-item" href="{{url('/sort')}}">Ожидают ответа</a>
 									</div>
 								</div>
 							</th>
+							<th>Published</th>
 							<th>Действие</th>
 						</tr>
 						@foreach($questions as $post)
 						<tr>
-							<td>{{ $post->id }}</td>
 							<td>{{ $post->category->title}}</td>
 							<td>{{ $post->title }}</td>
 							<td>{{ $post->name}}</td>
@@ -38,6 +37,7 @@
 							<td>
 								{{ $post->status}}
 							</td>
+							<td>{{$post->isPublished}}</td>
 							<td>
 								<form action="{{ route('questions.destroy', $post->id) }}" method="POST">
 									<a type="button" class="btn btn-default" href="{{ route('questions.edit', $post->id) }}">Изменить</a>

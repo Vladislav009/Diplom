@@ -74,17 +74,11 @@ class QuestionsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Question $question)
-    {   
-        if(isset($questions->body)){
-            $questions->update(
-                'status','Опубликован'
-            );
-        };
-
+    {
         $question->update($request->all());
         return redirect()->route('questions.index');
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *

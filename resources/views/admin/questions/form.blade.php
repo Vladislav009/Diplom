@@ -21,6 +21,14 @@
 								@include('admin.fields.text', ['field' => 'name', 'name' => 'Имя'])
 								@include('admin.fields.textarea', ['field' => 'body', 'name' => 'Ответ', 'rows' => 10])
 								@include('admin.fields.select', ['field' => 'category_id', 'name' => 'Категория', 'options' => $categories])
+								<div class="form-group row col-sm-10">
+    								<label class="col-sm-2 col-form-label"></label>Действие</label>
+    								<select class="form-control " name="isPublished">
+      									<option value="1">Опубликовать</option>
+      									<option value="2">Скрыть</option>
+    								</select>
+  								</div>
+
 							</div>
 							<input class="btn btn-primary btn-lg" type="submit" value="save">
 						</form>

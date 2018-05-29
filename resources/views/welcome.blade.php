@@ -24,6 +24,7 @@
         <a href="{{ url('/home') }}">Панель управления</a>
         @else
         <a href="{{ route('login') }}">Войти</a>
+        <a href="{{route ('pages.create')}}">Задать свой вопрос</a>
         <!-- <a href="{{ route('register') }}">Регистрация</a> -->
         @endauth
       </div>
@@ -43,7 +44,7 @@
       <ul id="{{$category->id}}" class="cd-faq-group">
         <li class="cd-faq-title"><h2>{{$category->title}}</h2></li>
         @foreach($category->questions as $question)
-        @if(isset($question->body))
+        @if(isset($question->body) & $question->isPublished == '1')
         <li>
           <a class="cd-faq-trigger" href="#{{$category->id}}">{{$question->title}}</a>
           <div class="cd-faq-content">
@@ -56,19 +57,10 @@
       @endforeach
     </div> <!-- cd-faq-items -->
     <a href="#0" class="cd-close-panel">Close</a>
-    <a href="{{route ('pages.create')}}">Задать свой вопрос</a>
   </section> <!-- cd-faq -->
   @else
   <p>Тут пусто</p>
   @endif
-
-
-  
-
-
-
-
-
 
   <script src="{{ asset('js/app.js') }}"></script>
   <script src="{{ asset('js/jquery.mobile.custom.min.js') }}"></script>

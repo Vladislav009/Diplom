@@ -13,9 +13,11 @@ class UserObserver
    */
   public function updating(Question $question)
   {
-       if (isset($question->body)) {
+       if (isset($question->body) & $question->isPublished == '1') {
            $question->status = 'Опубликован';
-       }else{
+       }elseif (isset($question->body) & $question->isPublished == '2') {
+          $question->status = 'Скрыт';
+      }else{
            $question->status = 'Без ответа';
        }
 

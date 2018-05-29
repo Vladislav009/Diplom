@@ -11,6 +11,7 @@ class Question extends Model
     	'title',
         'name',
     	'body',
+        'isPublished',
     	'category_id'
     ];
 
