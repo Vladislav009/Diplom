@@ -23,9 +23,7 @@
         @auth
         <a href="{{ url('/home') }}">Панель управления</a>
         @else
-        <a href="{{ route('login') }}">Войти</a>
         <a href="{{route ('pages.create')}}">Задать свой вопрос</a>
-        <!-- <a href="{{ route('register') }}">Регистрация</a> -->
         @endauth
       </div>
       @endif

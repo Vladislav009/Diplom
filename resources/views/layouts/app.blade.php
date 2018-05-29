@@ -41,7 +41,6 @@
                             <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Вопросы<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('questions.index') }}">Все</a></li>
-                                <li><a href="{{ route('questions.create') }}">Создать</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">

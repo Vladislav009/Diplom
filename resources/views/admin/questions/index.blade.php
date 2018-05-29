@@ -15,15 +15,7 @@
 							<th>Имя</th>
 							<th>Дата</th>
 							<th>
-								<div class="btn-group">
-									<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										Статус
-									</button>
-									<div class="dropdown-menu">
-										<a class="dropdown-item" href="#">Опубликованы</a>
-										<a class="dropdown-item" href="{{url('/sort')}}">Ожидают ответа</a>
-									</div>
-								</div>
+								<a  href="{{url('/sort')}}">Статус</a>
 							</th>
 							<th>Published</th>
 							<th>Действие</th>

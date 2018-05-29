@@ -12,20 +12,18 @@
 						<tr>
 							<th>ID</th>
 							<th>Категория</th>
-							<th>Всего/опубл./без отв.</th>
+							<th>Всего</th>
+							<th>Опубликовано</th>
+							<th>Без ответа</th>
 							<th>Действия</th>
 						</tr>
 						@foreach($categories as $category)
 						<tr>
 							<td>{{ $category->id }}</td>
-							<td>{{ $category->title }}</td>	
-							<td>
-								{{$category->questions->count()}}
-								
-
-								
-								
-							</td>
+							<td>{{ $category->title }}</td>
+							<td>{{$category->questions->count()}}</td>
+							<td>{{$category->questions->where('status', 'Опубликован')->count()}}</td>
+							<td>{{$category->questions->where('status', 'Без ответа')->count()}}</td>
 							<td>
 								<form action="{{ route('categories.destroy', $category->id) }}" method="POST">
 									<a type="button" class="btn btn-default" href="{{ route('categories.edit', $category->id) }}">Изменить</a>
