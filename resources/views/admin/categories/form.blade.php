@@ -6,9 +6,9 @@
 			<div class="col-md-8 col-md-offset-2">
 				<div class="panel panel-default">
 					@if(empty($entity))
-						<div class="panel-heading"><h2>Create new category</h2></div>
+						<div class="panel-heading"><h2>Создать новую категорию</h2></div>
 					@else
-						<div class="panel-heading"><h2>Edit category</h2></div>
+						<div class="panel-heading"><h2>Редактирование категории</h2></div>
 					@endif
 					<div class="panel-body">
 						<form action="@if(empty($entity)){{ route('categories.store') }}@else{{ route('categories.update', $entity->id) }}@endif" method="POST">
@@ -19,7 +19,7 @@
 							<div class="row">
 								@include('admin.fields.text', ['field' => 'title', 'name' => 'Title'])
 							</div>
-							<input class="btn btn-primary btn-lg" type="submit" value="save">
+							<input class="btn btn-primary btn-lg" type="submit" value="Сохранить">
 						</form>
 					</div>
 				</div>

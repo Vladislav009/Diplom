@@ -9,7 +9,7 @@ class QuestionsLogic extends Controller
 {
     public function sort(Question $question)
     {
-        $questions = Question::all()->sortBy('status');
+        $questions = Question::orderBy('status')->get();
         return view('admin.questions.index', compact('questions'));
     }
 }

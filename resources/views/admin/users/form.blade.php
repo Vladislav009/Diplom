@@ -22,7 +22,7 @@
 							@include('admin.fields.password', ['field' => 'password', 'name' => 'Пароль'])
 
 						</div>
-						<input class="btn btn-primary btn-lg" type="submit" value="save">
+						<input class="btn btn-primary btn-lg" type="submit" value="Сохранить">
 					</form>
 				</div>
 			</div>

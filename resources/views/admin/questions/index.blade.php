@@ -17,7 +17,6 @@
 							<th>
 								<a  href="{{url('/sort')}}">Статус</a>
 							</th>
-							<th>Published</th>
 							<th>Действие</th>
 						</tr>
 						@foreach($questions as $post)
@@ -29,7 +28,6 @@
 							<td>
 								{{ $post->status}}
 							</td>
-							<td>{{$post->isPublished}}</td>
 							<td>
 								<form action="{{ route('questions.destroy', $post->id) }}" method="POST">
 									<a type="button" class="btn btn-default" href="{{ route('questions.edit', $post->id) }}">Изменить</a>
